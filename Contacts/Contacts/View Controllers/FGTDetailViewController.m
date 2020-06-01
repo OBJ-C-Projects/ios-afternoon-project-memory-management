@@ -44,5 +44,8 @@
     NSLog(@"Edit button pressed!");
 }
 
-
+- (void)dealloc{
+    [contact release];
+    [super dealloc];
+}
 @end

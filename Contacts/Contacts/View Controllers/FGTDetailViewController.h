@@ -12,7 +12,7 @@
 @interface FGTDetailViewController : UIViewController
 
 @property (nonatomic, strong) FGTContact *contact;
-@property (nonatomic, strong) FGTDetailViewController *contactController;
+
 
 @end
 
