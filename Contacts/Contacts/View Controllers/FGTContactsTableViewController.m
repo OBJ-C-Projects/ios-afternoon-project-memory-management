@@ -20,7 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.contactsArray = [[NSMutableArray alloc] init];
+    self.contactsArray = [[[NSMutableArray alloc] init] autorelease];
+    [self.contactsArray retain];
 }
 #pragma mark - Actions
 
@@ -48,7 +49,7 @@
         UITextField *phoneNumberInput = alert.textFields[2];
         
         if ([fullNameInput hasText] && [phoneNumberInput hasText]){
-            FGTContact *newEntry = [[FGTContact alloc] initWithFullName:fullNameInput.text email:emailInput.text phoneNumber:phoneNumberInput.text];
+            FGTContact *newEntry = [[[FGTContact alloc] initWithFullName:fullNameInput.text email:emailInput.text phoneNumber:phoneNumberInput.text] autorelease];
             [self saveNewContact:(newEntry)];
             
             [alert dismissViewControllerAnimated:YES completion:nil];
@@ -72,6 +73,7 @@
 
 - (void) saveNewContact:(FGTContact *)contact{
     //Add the new contact to the contacts array
+    
     [self.contactsArray addObject:contact];
     
     NSLog(@"Array count: %lu",(unsigned long)self.contactsArray.count);
