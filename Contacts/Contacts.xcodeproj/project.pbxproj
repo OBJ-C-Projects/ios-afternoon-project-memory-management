@@ -15,6 +15,7 @@
 		04EE8BA52485027300E683D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04EE8BA32485027300E683D7 /* LaunchScreen.storyboard */; };
 		04EE8BA82485027300E683D7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EE8BA72485027300E683D7 /* main.m */; };
 		04EE8BB3248514D900E683D7 /* FGTContactsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EE8BB2248514D900E683D7 /* FGTContactsTableViewController.m */; };
+		04EE8BB62485379800E683D7 /* FGTContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EE8BB52485379800E683D7 /* FGTContact.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		04EE8BA72485027300E683D7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		04EE8BB1248514D900E683D7 /* FGTContactsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FGTContactsTableViewController.h; sourceTree = "<group>"; };
 		04EE8BB2248514D900E683D7 /* FGTContactsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FGTContactsTableViewController.m; sourceTree = "<group>"; };
+		04EE8BB42485379800E683D7 /* FGTContact.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FGTContact.h; sourceTree = "<group>"; };
+		04EE8BB52485379800E683D7 /* FGTContact.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FGTContact.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +71,7 @@
 				04EE8BAF2485109000E683D7 /* View Controllers */,
 				04EE8BAE2485108700E683D7 /* Storyboard */,
 				04EE8BA72485027300E683D7 /* main.m */,
+				04EE8BB72485379F00E683D7 /* Model */,
 			);
 			path = Contacts;
 			sourceTree = "<group>";
@@ -103,6 +107,15 @@
 				04EE8B992485026700E683D7 /* SceneDelegate.m */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		04EE8BB72485379F00E683D7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04EE8BB42485379800E683D7 /* FGTContact.h */,
+				04EE8BB52485379800E683D7 /* FGTContact.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +192,7 @@
 				04EE8B972485026700E683D7 /* AppDelegate.m in Sources */,
 				04EE8BA82485027300E683D7 /* main.m in Sources */,
 				04EE8B9A2485026700E683D7 /* SceneDelegate.m in Sources */,
+				04EE8BB62485379800E683D7 /* FGTContact.m in Sources */,
 				04EE8BB3248514D900E683D7 /* FGTContactsTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
