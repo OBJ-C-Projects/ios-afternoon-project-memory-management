@@ -10,6 +10,15 @@
 
 @interface ViewController ()
 
+
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *emailLabel;
+@property (weak, nonatomic) IBOutlet UILabel *phoneNumberLabel;
+
+
+
+
 @end
 
 @implementation ViewController
@@ -17,6 +26,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+- (IBAction)editButtonPressed:(UIBarButtonItem *)sender {
+    NSLog(@"Edit button pressed!");
 }
 
 
