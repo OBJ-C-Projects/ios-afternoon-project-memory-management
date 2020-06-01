@@ -8,6 +8,7 @@
 
 #import "FGTContactsTableViewController.h"
 #import "FGTContact.h"
+#import "FGTDetailViewController.h"
 
 @interface FGTContactsTableViewController ()
 
@@ -28,7 +29,6 @@
 - (IBAction)addNewContact:(UIBarButtonItem *)sender {
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Add New Entry" message:@"Enter info below" preferredStyle:UIAlertControllerStyleAlert];
-
     
     [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
         textField.placeholder = @"Full Name.";
@@ -47,15 +47,9 @@
         UITextField *fullNameInput = alert.textFields[0];
         UITextField *emailInput = alert.textFields[1];
         UITextField *phoneNumberInput = alert.textFields[2];
-        
-        if ([fullNameInput hasText] && [phoneNumberInput hasText]){
-            FGTContact *newEntry = [[[FGTContact alloc] initWithFullName:fullNameInput.text email:emailInput.text phoneNumber:phoneNumberInput.text] autorelease];
-            [self saveNewContact:(newEntry)];
-            
-            [alert dismissViewControllerAnimated:YES completion:nil];
-        }else{
-            NSLog(@"Empty filds.");
-        }
+        FGTContact *newEntry = [[[FGTContact alloc] initWithFullName:fullNameInput.text email:emailInput.text phoneNumber:phoneNumberInput.text] autorelease];
+        [self saveNewContact:(newEntry)];
+        [alert dismissViewControllerAnimated:YES completion:nil];
     }];
     
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
@@ -102,6 +96,13 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    
+    if([[segue identifier] isEqualToString: @"DetailVC"]){
+        FGTDetailViewController *detailVC = [segue destinationViewController];
+        
+        detailVC.contact = self.contactsArray[indexPath.row];
+    }
 }
  
 

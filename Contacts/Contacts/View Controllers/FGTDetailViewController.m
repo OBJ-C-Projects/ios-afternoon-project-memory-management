@@ -6,9 +6,10 @@
 //  Copyright © 2020 FGT MAC. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "FGTDetailViewController.h"
+@class FGTContact;
 
-@interface ViewController ()
+@interface FGTDetailViewController ()
 
 #pragma mark - Outlets
 
@@ -22,11 +23,20 @@
 
 @end
 
-@implementation ViewController
+@implementation FGTDetailViewController
+
+@synthesize contact;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self updateView];
+}
+
+- (void)updateView{
+    self.nameLabel.text = contact.fullName;
+    self.emailLabel.text = contact.email;
+    self.phoneNumberLabel.text = contact.phoneNumber;
 }
 
 #pragma mark - Actions
